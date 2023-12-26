@@ -34,10 +34,14 @@ var quotes = [
   },
 ];
 
-
+var temp = 999;
 
 function change() {
   var randomIndex = Math.floor(Math.random() * quotes.length);
+  while (temp == randomIndex) {
+    var randomIndex = Math.floor(Math.random() * quotes.length);
+  }
+  temp = randomIndex;
   document.getElementById("quote").innerHTML = quotes[randomIndex].quote;
   document.getElementById("author").innerHTML = quotes[randomIndex].author;
 }
